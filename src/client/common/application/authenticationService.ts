@@ -18,7 +18,8 @@ export class AuthenticationService implements IAuthenticationService {
     constructor(
         @inject(UseVSCodeNotebookEditorApi) private readonly useNativeNb: boolean,
         @inject(IExtensionContext) private context: IExtensionContext
-    ) {}
+    ) { }
+    providerIds: readonly string[] = [];
     public get onDidChangeAuthenticationProviders(): vscode.Event<vscode.AuthenticationProvidersChangeEvent> {
         return vscode.authentication.onDidChangeAuthenticationProviders;
     }
